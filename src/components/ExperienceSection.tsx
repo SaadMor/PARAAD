@@ -1,3 +1,4 @@
+import { FiCalendar, FiMapPin } from 'react-icons/fi';
 import type { ExperienceItem } from '../data/resume';
 import SectionTitle from './SectionTitle';
 
@@ -14,12 +15,18 @@ const ExperienceSection = ({ heading, items }: ExperienceSectionProps) => {
         {items.map((item) => (
           <li key={`${item.role}-${item.company}`}>
             <h3>{item.role}</h3>
-            <p>
-              <a className="link-like" href={item.companyUrl} rel="noreferrer" target="_blank">
-                {item.company}
-              </a>
+            <p className="meta meta-inline">
+              <span className="icon-inline">
+                <FiMapPin className="inline-icon" aria-hidden="true" focusable="false" />
+                <a className="link-like" href={item.companyUrl} rel="noreferrer" target="_blank">
+                  {item.company}
+                </a>
+              </span>
+              <span className="icon-inline">
+                <FiCalendar className="inline-icon" aria-hidden="true" focusable="false" />
+                <span>{item.period}</span>
+              </span>
             </p>
-            <p className="meta">{item.period}</p>
             <ul>
               {item.bullets.map((bullet) => (
                 <li key={bullet}>{bullet}</li>
