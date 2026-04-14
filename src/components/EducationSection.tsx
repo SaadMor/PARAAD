@@ -14,7 +14,11 @@ const EducationSection = ({ heading, items }: EducationSectionProps) => {
         {items.map((item) => (
           <li key={`${item.degree}-${item.institution}`}>
             <h3>{item.degree}</h3>
-            <p>{item.institution}</p>
+            <p>
+              <a className="link-like" href={item.institutionUrl} rel="noreferrer" target="_blank">
+                {item.institution}
+              </a>
+            </p>
             <p className="meta">{item.period}</p>
           </li>
         ))}

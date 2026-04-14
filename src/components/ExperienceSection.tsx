@@ -10,11 +10,15 @@ const ExperienceSection = ({ heading, items }: ExperienceSectionProps) => {
   return (
     <section aria-labelledby="experience-heading">
       <SectionTitle id="experience-heading" title={heading} />
-      <ul className="section-list">
+      <ul className="section-list experience-list">
         {items.map((item) => (
           <li key={`${item.role}-${item.company}`}>
             <h3>{item.role}</h3>
-            <p>{item.company}</p>
+            <p>
+              <a className="link-like" href={item.companyUrl} rel="noreferrer" target="_blank">
+                {item.company}
+              </a>
+            </p>
             <p className="meta">{item.period}</p>
             <ul>
               {item.bullets.map((bullet) => (
