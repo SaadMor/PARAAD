@@ -1,3 +1,4 @@
+import { FiCalendar, FiMapPin } from 'react-icons/fi';
 import type { EducationItem } from '../data/resume';
 import SectionTitle from './SectionTitle';
 
@@ -14,12 +15,18 @@ const EducationSection = ({ heading, items }: EducationSectionProps) => {
         {items.map((item) => (
           <li key={`${item.degree}-${item.institution}`}>
             <h3>{item.degree}</h3>
-            <p>
-              <a className="link-like" href={item.institutionUrl} rel="noreferrer" target="_blank">
-                {item.institution}
-              </a>
+            <p className="meta meta-inline">
+              <span className="icon-inline">
+                <FiMapPin className="inline-icon" aria-hidden="true" focusable="false" />
+                <a className="link-like" href={item.institutionUrl} rel="noreferrer" target="_blank">
+                  {item.institution}
+                </a>
+              </span>
+              <span className="icon-inline">
+                <FiCalendar className="inline-icon" aria-hidden="true" focusable="false" />
+                <span>{item.period}</span>
+              </span>
             </p>
-            <p className="meta">{item.period}</p>
           </li>
         ))}
       </ul>
