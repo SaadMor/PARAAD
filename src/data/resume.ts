@@ -13,12 +13,14 @@ export interface Summary {
 export interface EducationItem {
   degree: string;
   institution: string;
+  institutionUrl: string;
   period: string;
 }
 
 export interface ExperienceItem {
   role: string;
   company: string;
+  companyUrl: string;
   period: string;
   bullets: string[];
 }
@@ -64,6 +66,7 @@ export const resumeData: ResumeData = {
     {
       degree: 'B.S. in Computer Science',
       institution: 'University of California, Berkeley',
+      institutionUrl: 'https://www.berkeley.edu',
       period: '2016 - 2020',
     },
   ],
@@ -72,6 +75,7 @@ export const resumeData: ResumeData = {
     {
       role: 'Senior Frontend Developer',
       company: 'BrightTech Inc.',
+      companyUrl: 'https://www.brighttech.com',
       period: 'Jan 2023 - Present',
       bullets: [
         'Led migration of a large React codebase to TypeScript, improving maintainability and reducing production bugs.',
@@ -82,6 +86,7 @@ export const resumeData: ResumeData = {
     {
       role: 'Frontend Developer',
       company: 'Nova Digital',
+      companyUrl: 'https://www.novadigital.com',
       period: 'Jul 2020 - Dec 2022',
       bullets: [
         'Developed and maintained customer-facing pages with React and Vite.',

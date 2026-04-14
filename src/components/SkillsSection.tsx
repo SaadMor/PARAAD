@@ -10,7 +10,7 @@ const SkillsSection = ({ heading, items }: SkillsSectionProps) => {
   return (
     <section aria-labelledby="skills-heading">
       <SectionTitle id="skills-heading" title={heading} />
-      <ul className="section-list">
+      <ul className="section-list skills-list">
         {items.map((group) => (
           <li key={group.title}>
             <h3>{group.title}</h3>
